@@ -174,10 +174,6 @@ namespace scanner
         bool SetDeviceImageFormat(ATL::CComPtr<IWiaItem2> device, const std::wstring& imageFormat);
         bool SetDeviceScanPageCount(ATL::CComPtr<IWiaItem2> device, int pageCount);
 
-        DWORD MarshalImgSource(ATL::CComPtr<IWiaItem2> device);
-        ATL::CComPtr<IWiaItem2> GetMarshalledImgSource(DWORD cookie);
-        void RemoveMarshalledImageSource(DWORD cookie);
-
     private:
         std::recursive_mutex m_lockWIADevice;
 

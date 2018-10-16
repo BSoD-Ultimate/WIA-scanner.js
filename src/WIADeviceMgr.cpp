@@ -1386,30 +1386,5 @@ namespace scanner
         return false;
     }
 
-    DWORD CWIADevice::MarshalImgSource(ATL::CComPtr<IWiaItem2> device)
-    {
-        DWORD cookie = 0;
-        auto interfaceTable = m_manager.GetInterfaceTable();
-        assert(interfaceTable);
-
-        HRESULT hr = interfaceTable->RegisterInterfaceInGlobal(m_pDevice, IID_IWiaItem2, &cookie);
-        assert(SUCCEEDED(hr));
-        return cookie;
-    }
-    ATL::CComPtr<IWiaItem2> CWIADevice::GetMarshalledImgSource(DWORD cookie)
-    {
-        ATL::CComPtr<IWiaItem2> device;
-
-        auto interfaceTable = m_manager.GetInterfaceTable();
-        HRESULT hr = interfaceTable->GetInterfaceFromGlobal(cookie, IID_IWiaItem2, (void**)&device);
-        return device;
-    }
-    void CWIADevice::RemoveMarshalledImageSource(DWORD cookie)
-    {
-        auto interfaceTable = m_manager.GetInterfaceTable();
-        HRESULT hr = interfaceTable->RevokeInterfaceFromGlobal(cookie);
-        assert(SUCCEEDED(hr));
-    }
-
 }
 
