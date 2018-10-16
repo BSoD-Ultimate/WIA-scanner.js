@@ -19,8 +19,8 @@ add_subdirectory(src)
 set(INSTALL_FILE_LIST
   "$<TARGET_LINKER_FILE:wia-scanner-js>"
   "$<TARGET_FILE:wia-scanner-js>"
-  "${CMAKE_CURRENT_SOURCE_DIR}/wia-scanner-js/index.js"
-  "${CMAKE_CURRENT_SOURCE_DIR}/wia-scanner-js/package.json"
+  "${CMAKE_CURRENT_SOURCE_DIR}/src/index.js"
+  "${CMAKE_CURRENT_SOURCE_DIR}/src/package.json"
 )
 
 install(FILES 
