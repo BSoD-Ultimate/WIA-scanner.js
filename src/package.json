@@ -1,0 +1,17 @@
+{
+	"name": "wia-scanner-js",
+	"main": "index.js",
+	"version": "1.0.0",
+	"directories": {},
+	"description": "A simple WIA(Windows Image Acquisition) API wrapper for Node.js.",
+	"cpu": [
+		"x64",
+		"ia32"
+	],
+	"os": [
+		"win32"
+	],
+	"dependencies": {
+		"nan": "^2.10.0"
+	}
+}
